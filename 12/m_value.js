@@ -2,7 +2,7 @@
 window = global;
 delete global;
 
-aef_$ = {
+_$ = {
   ajax: function () {
     console.log("此时参数是====>", arguments);
   },
@@ -11,7 +11,7 @@ aef_$ = {
     window.ttt=arguments[2].url
   },
 };
-window.$ = aef_$;
+window.$ = _$;
 
 screen = {
   width: 1600,
@@ -130,7 +130,7 @@ let setProxyArr = function (proxyObjArr) {
     // 定义代理处理器，包含get和set陷阱函数
     const handler = `{
         get:function(target,property,receiver){
-          // 排除一些特定属性的访问，以避免不必要的代理干扰
+          
 
           temp=Reflect.get(...arguments);
           console.log("方法:","get","外层对象","${proxyObjArr[i]}","属性:", property,"属性值类型:",typeof target[property]);
@@ -1706,7 +1706,7 @@ QQQO) && (OＯ0$ = 0x189);
         (QOOQQQ0 = QQ0OQOO[O00000O++]);
       if (QOOQQQ0) {
         if (OQOQQ0Q == "$") {
-          Q0OQO0O[OQOQQ0Q] = aef_$;
+          Q0OQO0O[OQOQQ0Q] = _$;
         }
         OOO00OO["push"](Q0OQO0O[OQOQQ0Q]);
       }
@@ -2602,7 +2602,7 @@ function loadPage(page) {
   });
 }
 
-debugger
+
 
 
 function get_url(page){
