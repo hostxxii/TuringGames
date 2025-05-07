@@ -53,7 +53,6 @@ for page in range(1, 21):
 
     data = {"page": page, "t": key_lst[1], "h5": key_lst[0]}
     data = json.dumps(data)
-
     response = requests.post('https://www.mashangpa.com/api/problem-detail/16/data/',
                            cookies=cookies,
                            headers=headers,

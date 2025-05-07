@@ -38,7 +38,6 @@ for page in range(1,21):
 
     data = {"page":page}
     data=json.dumps(data)
-
     response = requests.post(
         'https://www.mashangpa.com/api/problem-detail/14/data/',
         params=params,
@@ -49,7 +48,6 @@ for page in range(1,21):
     print(response.status_code)
     print(response.text)
     data_dir=json.loads(response.text)
-    # print(data)
     array=data_dir["current_array"]
     sum_array=sum(array)
     result+=sum_array

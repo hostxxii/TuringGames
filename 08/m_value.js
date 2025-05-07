@@ -22,7 +22,6 @@ function get_m(pageNumber){
     let t=new Date().getTime();
     let arg1='oooooo'+t+pageNumber;
     let t_tr=btoa(t)
-
     return [OOOoOo(arg1, 'oooooo'),t_tr];
 }
 

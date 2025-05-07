@@ -1,6 +1,4 @@
 window = global;
-
-// ?源代码
 (window = this),
   (function (n) {
     function r(n, r) {
@@ -550,10 +548,9 @@ window = global;
     };
   })();
 
-// ?函数执行
 function get_sign(t) {
   let n = "tuling";
   let r = new Date().getTime();
   return [window.md5(n + r + t), r];
 }
-console.log(get_sign());
+

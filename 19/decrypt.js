@@ -46,9 +46,11 @@ formatDate = function (v, format) {
   }
   return format;
 };
+
 iv = function () {
   return formatDate(new Date(), "yyyyMMdd");
 };
+
 decrypt = function (b, c, a) {
   if (c) {
     return CryptoJS.enc.Utf8.stringify(

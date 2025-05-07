@@ -29,7 +29,7 @@ headers = {
 
 result=0
 for page in range(1,21):
-    xl=execjs.compile(open(r'第五题\xl_value.js', 'r', encoding='utf-8').read()).call('get_xl',page)
+    xl=execjs.compile(open(r'05\xl_value.js', 'r', encoding='utf-8').read()).call('get_xl',page)
     print(xl,page)
     
     json_data = {
@@ -38,9 +38,8 @@ for page in range(1,21):
 
     response = requests.post('https://stu.tulingpyton.cn/api/problem-detail/5/data/', cookies=cookies, headers=headers, json=json_data)
     print(response.status_code)
-    # print(response.text)
+    print(response.text)
     data=json.loads(response.text)
-    # print(data)
     array=data["current_array"]
     sum_array=sum(array)
     result+=sum_array

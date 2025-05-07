@@ -1,7 +1,4 @@
-
 const CryptoJS = require ("crypto-js");
-
-// ?源代码
 window = this, function (n) {
     function r(n, r) {
         var t = (65535 & n) + (65535 & r);
@@ -101,14 +98,11 @@ function xxxxoooo(encryptedHex) {
     return deccc.toString(dd.a.enc.Utf8);
 }
 
-// ?加密函数
 function get_s(){
     window.ttt = new Date().getTime();
     return [window.xxoo("sssssbbbbb" + window.ttt),window.ttt]
 }
-// console.log(typeof(get_s()[1]));
 
-// ?解密函数
 function get_data(encryptedHex){
     console.log("encryptedHex:", encryptedHex); 
     return xxxxoooo(encryptedHex)

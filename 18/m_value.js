@@ -93,6 +93,7 @@ window.MediaSource = { // Mock MediaSource
     }
 };
 delete global;
+
 !function(e) {
     var t = {};
     function n(r) {

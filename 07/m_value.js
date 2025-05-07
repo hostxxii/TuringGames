@@ -1,6 +1,6 @@
 const CryptoJS = require("crypto-js");
 window=global
-// ?源代码
+
 const c = {
     stringify: JSON.stringify,
     parse: JSON.parse
@@ -19,16 +19,6 @@ const c = {
       return c[a];
     }
   });
-
-  // 注释掉无限循环的代码
-  // setInterval(() => {
-  //   (function (b) {
-  //     return function (b) {
-  //       return Function("Function(arguments[0]+\"" + b + "\")()");
-  //     }(b);
-  //   })("bugger")("de", 0, 0, (0, 0));
-  // }, 1000);
-
   (function (b) {
     function q(d, a) {
       var b = (d & 65535) + (a & 65535);
@@ -169,7 +159,6 @@ const c = {
     return b.toString(dd.a.enc.Utf8);
   }
 
-// ?执行函数
 function get_m_ts() {
   const time = new Date().getTime();
   const arg = 'xialuo' + time;
@@ -179,7 +168,6 @@ function get_m_ts() {
     ts: time
   };
 }
-
 const result = get_m_ts();
 
 

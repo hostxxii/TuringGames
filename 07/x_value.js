@@ -4,6 +4,7 @@ const CryptoJS = require('crypto-js');
  * @param {string} message - 需要计算哈希值的字符串
  * @returns {string} - 返回十六进制格式的SHA256哈希值
  */
+
 function sha256(message) {
   return CryptoJS.SHA256(message).toString(CryptoJS.enc.Hex);
 }

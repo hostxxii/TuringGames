@@ -3,7 +3,7 @@ import hmac
 import hashlib
 import time
 import  base64
-
+import json
 def btoa(s):
     return base64.b64encode(s.encode('utf-8')).decode('utf-8')
 
@@ -15,7 +15,6 @@ encrypted_value = "9527"+t
 tt=btoa(t)
 print(type(tt))
 
-
 # 密钥
 key = "xxxooo"
 
@@ -24,9 +23,6 @@ hmac_sha1 = hmac.new(key.encode('utf-8'), encrypted_value.encode('utf-8'), hashl
 
 # 获取 HMAC 值的十六进制表示
 m = hmac_sha1.hexdigest()
-
-print(type(m))
-
 
 cookies = {
     'Hm_lvt_b5d072258d61ab3cd6a9d485aac7f183': '1745833692',
@@ -52,7 +48,7 @@ headers = {
     'x-requested-with': 'XMLHttpRequest',
     # 'cookie': 'Hm_lvt_b5d072258d61ab3cd6a9d485aac7f183=1745833692; HMACCOUNT=5316E8BD7726869C; sessionid=zqd6yej3hm4idoq9mq2pig8kv4v5hel0; Hm_lpvt_b5d072258d61ab3cd6a9d485aac7f183=1745833909',
 }
-import json
+
 result=0
 for page in range(1,21):
     json_data = {

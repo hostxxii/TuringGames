@@ -2602,9 +2602,6 @@ function loadPage(page) {
   });
 }
 
-
-
-
 function get_url(page){
   loadPage(page)
   let url = window.ttt

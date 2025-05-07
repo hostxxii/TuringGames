@@ -1,5 +1,6 @@
 import requests
 import execjs
+import json
 cookies = {
     'Hm_lvt_b5d072258d61ab3cd6a9d485aac7f183': '1745833692',
     'HMACCOUNT': '5316E8BD7726869C',
@@ -24,7 +25,7 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
     # 'cookie': 'Hm_lvt_b5d072258d61ab3cd6a9d485aac7f183=1745833692; HMACCOUNT=5316E8BD7726869C; sessionid=zqd6yej3hm4idoq9mq2pig8kv4v5hel0; v=QThMZlE5bEtFUjdQUndMWTdXSTdQSk1tRThNaGs4Y2hlSmE2MFF6YjduM2dZR3g5OUNNV3ZVZ25DdUxmMTc0NjUyMjQwOTM5NA==; Hm_lpvt_b5d072258d61ab3cd6a9d485aac7f183=1746589992',
 }
-import json
+
 result=0
 for page in range(1,21):
     params = {
@@ -33,10 +34,8 @@ for page in range(1,21):
     
     response = requests.get('https://www.mashangpa.com/api/problem-detail/17/data/', params=params, cookies=cookies, headers=headers)
     print(response.status_code)
-
     data=response.json()
     print(data)
-
     data_dir=execjs.compile(open(r'17\decrypt.js', encoding='utf-8').read()).call('get_data', data)
     print(data_dir)
     array=data_dir["current_array"]

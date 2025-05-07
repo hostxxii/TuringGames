@@ -5,7 +5,6 @@ _$ = {
   beforeSend: function () {},
 };
 window.$ = _$;
-
 window.setInterval = function () {};
 
 setInterval(() => {
@@ -411,4 +410,4 @@ var d = (function (f) {
   };
 });
 
-console.log($.beforeSend(1));
+

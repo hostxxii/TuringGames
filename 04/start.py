@@ -1,6 +1,6 @@
 import requests
 import execjs
-
+import json
 cookies = {
     'Hm_lvt_b5d072258d61ab3cd6a9d485aac7f183': '1745206241',
     'HMACCOUNT': 'EA80830BD92F82B0',
@@ -25,10 +25,9 @@ headers = {
     # 'cookie': 'Hm_lvt_b5d072258d61ab3cd6a9d485aac7f183=1745206241; HMACCOUNT=EA80830BD92F82B0; sessionid=sdppwfgsy8uvri4yhoccbeecrpz3veig; Hm_lpvt_b5d072258d61ab3cd6a9d485aac7f183=1745291826',
 }
 
-import json
 result=0
 for page in range(1,21):
-    keydata=execjs.compile(open(r'第四题\sign_value.js',encoding='utf-8').read()).call('get_sign',page)
+    keydata=execjs.compile(open(r'04\sign_value.js',encoding='utf-8').read()).call('get_sign',page)
     print(keydata,page)
 
     params = {
@@ -38,10 +37,9 @@ for page in range(1,21):
     }
 
     response = requests.get('https://stu.tulingpyton.cn/api/problem-detail/4/data/', params=params, cookies=cookies, headers=headers)
-    # print(response.status_code)
-    # print(response.text)
+    print(response.status_code)
+    print(response.text)
     data=json.loads(response.text)
-    # print(data)
     array=data["current_array"]
     sum_array=sum(array)
     result+=sum_array

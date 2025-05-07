@@ -8,6 +8,7 @@ cookies = {
     '_nano_fp': 'XpmYn5dblpdqn0TyX9_WKtiyZNDXSCXWcGFsAXq0',
     'Hm_lpvt_b5d072258d61ab3cd6a9d485aac7f183': '1746636804',
 }
+
 result=0
 for page in range(1,21):
     m=execjs.compile(open(r'18\m_value.js',encoding='utf-8').read()).call('get_m')
@@ -40,7 +41,6 @@ for page in range(1,21):
     response = requests.get('https://www.mashangpa.com/api/problem-detail/18/data/', params=params, cookies=cookies, headers=headers)
     print(response.status_code)
     data_dir=response.json()
-    # print(data)
     array=data_dir["current_array"]
     sum_array=sum(array)
     result+=sum_array

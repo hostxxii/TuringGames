@@ -1,6 +1,5 @@
 
 const CryptoJS = require('crypto-js');
-
 function h(_0x26b5cf, _0x41a4dc) {
   var _0x27bd6f;
   var _0x56c5bf;

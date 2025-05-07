@@ -10,8 +10,7 @@ cookies = {
 
 result=0
 for page in range(1,21):
-    key_s=execjs.compile(open(r'第六题\s_value.js','r',encoding='utf-8').read()).call('get_s')
-    # print(type(key_s))
+    key_s=execjs.compile(open(r'06\s_value.js','r',encoding='utf-8').read()).call('get_s')
     headers = {
         'accept': '*/*',
         'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8',
@@ -40,8 +39,7 @@ for page in range(1,21):
     print(response.text,page)
     fake_data=json.loads(response.text)
     fake_t=fake_data['t']
-    real_data=execjs.compile(open(r'第六题\s_value.js','r',encoding='utf-8').read()).call('get_data',fake_t)
-    # print(real_data,)
+    real_data=execjs.compile(open(r'06\s_value.js','r',encoding='utf-8').read()).call('get_data',fake_t)
     real_data = json.loads(real_data) 
     array=real_data["current_array"]
     sum_array=sum(array)

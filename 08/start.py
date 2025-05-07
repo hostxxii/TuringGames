@@ -1,6 +1,6 @@
 import requests
 import execjs
-
+import json
 cookies = {
     'Hm_lvt_b5d072258d61ab3cd6a9d485aac7f183': '1745662381',
     'HMACCOUNT': '5316E8BD7726869C',
@@ -9,12 +9,9 @@ cookies = {
     's': '51b351b351b351b370b0d0f0b0d010d090b0715010',
 }
 
-import json
 result=0
 for page in range(1,21):
-
-    data=execjs.compile(open(r'第八题\m_value.js',encoding='utf-8').read()).call('get_m',page)
-    # print(data)
+    data=execjs.compile(open(r'08\m_value.js',encoding='utf-8').read()).call('get_m',page)
 
     headers = {
         'accept': '*/*',
@@ -43,8 +40,6 @@ for page in range(1,21):
     }
 
     response = requests.post('https://stu.tulingpyton.cn/api/problem-detail/8/data/', cookies=cookies, headers=headers, json=json_data)
-    
-
     print(response.status_code)
     print(response.text)
     data_dir=json.loads(response.text)

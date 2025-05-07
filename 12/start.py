@@ -1,5 +1,6 @@
 import requests
 import execjs
+import json
 cookies = {
     'Hm_lvt_b5d072258d61ab3cd6a9d485aac7f183': '1745833692',
     'HMACCOUNT': '5316E8BD7726869C',
@@ -23,12 +24,9 @@ headers = {
     # 'cookie': 'Hm_lvt_b5d072258d61ab3cd6a9d485aac7f183=1745833692; HMACCOUNT=5316E8BD7726869C; sessionid=zqd6yej3hm4idoq9mq2pig8kv4v5hel0; Hm_lpvt_b5d072258d61ab3cd6a9d485aac7f183=1746166721',
 }
 
-import json
 result=0
 for page in range(1,21):
-    
     data=execjs.compile(open(r'12\m_value.js','r',encoding='utf-8').read()).call('get_url',page)
-    # print(data)
     params = {
         'page': str(page),
         'm': data[0],

@@ -1,8 +1,5 @@
 const CryptoJS = require("crypto-js");
-
-//?源代码
 const _0x38addf = _0x66a7;
-
 function _0x66a7(_0x7461a9, _0x14ffcc) {
   const _0x4f0d09 = _0x4f0d();
   return (
@@ -84,7 +81,6 @@ function encrypt(_0x277028) {
   );
 }
 
-//?函数执行
 function get_xl(pageNumber) {
   const timestamp = new Date().getTime();
   const params = {

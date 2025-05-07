@@ -39,7 +39,6 @@ for page in range(1,21):
     print(response.status_code)
     print(response.text)
     data_dir=json.loads(response.text)
-    # print(data)
     array=data_dir["current_array"]
     sum_array=sum(array)
     result+=sum_array

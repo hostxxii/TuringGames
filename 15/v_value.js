@@ -19,7 +19,6 @@ if (typeof global !== 'undefined' && window === global) {
     // Otherwise, assume window is the current 'this' (e.g., in a bare V8 engine or Web Worker)
 }
 
-
 window.setInterval = typeof setInterval === 'function' ? setInterval : function () {};
 window.setTimeout = typeof setTimeout === 'function' ? setTimeout : function () {};
 
